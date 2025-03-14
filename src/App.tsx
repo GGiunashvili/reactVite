@@ -1,5 +1,5 @@
 // import Hello from "./components/Hello";
-
+import Fruits from "./components/Fruits";
 export default function App() {
   // const person = {
   //   name: "xing",
@@ -7,12 +7,8 @@ export default function App() {
   //   seatnumbers: [1, 2, 3],
   // };
   // const people = ["ana", "bob", "cat"];
-  interface fruitsInterface {
-    name: string;
-    price: number;
-  }
 
-  const fruits: fruitsInterface[] = [
+  const fruits = [
     {
       name: "apple",
       price: 5,
@@ -32,11 +28,9 @@ export default function App() {
     <>
       <h1>home</h1>
       <ul>
-        {fruits.map((fruit, index) => {
+        {fruits.map((fruit) => {
           return (
-            <li key={index}>
-              {fruit.name} - {fruit.price}
-            </li>
+            <Fruits key={fruit.name} name={fruit.name} price={fruit.price} />
           ); // Return the JSX
         })}
       </ul>
