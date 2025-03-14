@@ -1,19 +1,18 @@
 interface HelloProps {
-  person: {
-    name: string;
-    age?: number;
-  };
+  name: string;
+  age?: number;
+  seatnumbers: number[]; // Default value
   size?: number; // Make size optional
 }
 
-export default function Hello({ person, size }: HelloProps) {
+export default function Hello(props: any) {
   //  Specifying a default age for a prop -- without it person.name would work and not just name
-  const { name, age = 20 } = person;
   // person.name to name
   return (
     <div>
-      <p style={{ width: size }}>
-        Hello {name}, you are {age} years old
+      <p>
+        Hello {props.person.name}, you are {props.person.age} years old, your
+        seat is {props.person.seatnumbers}
       </p>
     </div>
   );
