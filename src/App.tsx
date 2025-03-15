@@ -3,8 +3,10 @@ import Todo from "./components/Todo";
 export default function App() {
   return (
     <>
-      <h1>home</h1>
-      <Todo />
+      <div className="m-[20px]">
+        <h1 className="text-purple-900">home</h1>
+        <Todo />
+      </div>
     </>
   );
 }
