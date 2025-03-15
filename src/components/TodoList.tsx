@@ -4,8 +4,10 @@ export default function TodoList({
   todos,
   setTodos,
 }: {
-  todos: { name: string }[];
-  setTodos: React.Dispatch<React.SetStateAction<{ name: string }[]>>;
+  todos: { name: string; done: boolean }[]; // Updated to include the 'done' property
+  setTodos: React.Dispatch<
+    React.SetStateAction<{ name: string; done: boolean }[]>
+  >; // Updated type
 }) {
   return (
     <div>
