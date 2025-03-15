@@ -1,15 +1,21 @@
 import TodoItem from "./TodoItem";
+
 export default function TodoList({
   todos,
   setTodos,
 }: {
-  todos: string[];
-  setTodos: any;
+  todos: { name: string }[];
+  setTodos: React.Dispatch<React.SetStateAction<{ name: string }[]>>;
 }) {
   return (
     <div>
-      {todos.map((item: string, index) => (
-        <TodoItem key={index} item={item} todos={todos} setTodos={setTodos} />
+      {todos.map((item) => (
+        <TodoItem
+          key={item.name}
+          item={item}
+          todos={todos}
+          setTodos={setTodos}
+        />
       ))}
     </div>
   );
